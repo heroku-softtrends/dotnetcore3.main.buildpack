@@ -78,5 +78,5 @@ dotnet publish $PROJECT_FILE --output ${BUILD_DIR}/heroku_output --configuration
 find -maxdepth 1 ! -name .profile.d ! -name .apt ! -name .heroku ! -name node_modules ! -name heroku_output  -exec rm -rv {} \;
 
 cat << EOT >> ${BUILD_DIR}/Procfile
-web: cd \$HOME/heroku_output && ASPNETCORE_URLS='http://+:\$PORT' dotnet "./${PROJECT_NAME}.dll"
+web: cd \$HOME/heroku_output && ASPNETCORE_URLS='https://+:\$PORT' dotnet "./${PROJECT_NAME}.dll"
 EOT
